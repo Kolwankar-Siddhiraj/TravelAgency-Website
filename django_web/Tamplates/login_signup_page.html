@@ -1,0 +1,260 @@
+{% load static %}
+{% static "images" as url_of_img %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Login-Signup</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/css/login_signup_page.css' %}" />
+    </head>
+	<body id="bdy1" class="is-preload homepage" style="background-image: url('{{url_of_img}}/{{obj.imgbd}}');">
+        <!--
+        <h1> Login and Signup Page </h1>
+        -->
+        <div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="#">Travel India</a></h1>
+								<span> <br></span>
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li><a class="navbar_word" href="home_page">Home</a></li>
+									<li id="adjsut_navbar_btn1" class="current" ><a href="#">Login</a></li>
+                                </ul>
+							</nav>
+					</header>
+				</div>
+
+            <!-- tp_code start-->
+            
+            <!-- Features -->
+				<div id="main_div_login_signup" id="features-wrapper" style="background-image: url('{{url_of_img}}/{{obj.imgdiv}}');">
+					<div id="for_back_img" class="container">
+						<div id="form_l_s1" class="row">
+                        
+                        
+                            <div class="col-4 col-12-medium">
+									<section class="box feature">
+                                        
+									</section>
+                            </div>
+
+							<div id="form_l_s" class="col-4 col-12-medium">
+
+								<!-- Box -->
+									<section class="box feature">
+				
+										<div class="inner">
+                                            
+                                            <!-- form paste here -->
+                                            <div class="wrapper">
+                                                <div class="title-text">
+                                                <div class="title login">
+                                                Login Form</div>
+                                                <div class="title signup">
+                                                Signup Form</div>
+                                                </div>
+                                                <div class="form-container">
+                                                <div class="slide-controls">
+                                                <input type="radio" name="slide" id="login" checked >
+                                                <input type="radio" name="slide" id="signup" >
+                                                <label for="login" class="slide login">Login</label>
+                                                <label for="signup" class="slide signup">Signup</label>
+                                                <div class="slider-tab">
+                                                </div>
+                                                </div>
+                                                <div class="form-inner">
+
+                                                <!-- Login form start here -->
+                                                <form action="login_check_info" method="POST" class="login">
+
+                                                {% csrf_token %}
+
+                                                <div class="field">
+                                                <input id="user" type="email" name="userid_login" placeholder=
+                                                {% if obj.check_email %}
+                                                incorrect..E-mail
+                                                {% endif %}
+                                                E-mail required>
+                                                </div>
+                                                <div class="field">
+                                                <input type="password"  
+                                                name="password_login" placeholder=
+                                                {% if obj.check_pass %}
+                                                incorrect..Password
+                                                {% endif %}
+                                                Password required>
+                                                </div>
+                                                <div class="pass-link">
+                                                <h6><a href="#">Forgot password?</a></h6>
+                                                </div>
+                                                <div class="field btn">
+                                                <div class="btn-layer">
+                                                </div>
+                                                <input type="submit" value="Login">
+                                                </div>
+                                                <div class="signup-link">
+                                                <h6>Create account, <a href="">Signup now</a></h6>
+                                                </div>
+                                                </form>
+                                                <!-- Login form end here -->
+
+                                                <!-- Signup form start here -->
+                                                <form action="signup_check_info" method="POST" class="signup">
+
+                                                {% csrf_token %}
+
+                                                <div class="field">
+                                                <input type="email" name="email_signup" placeholder=
+                                                {% if obj.s_email %}
+                                                incorrect..E-mail
+                                                {% endif %}
+                                                E-mail required>
+                                                </div>
+                                                <div class="field">
+                                                <input type="text" name="userid_signup" placeholder=
+                                                {% if obj.s_userid %}
+                                                incorrect..Name
+                                                {% endif %}
+                                                Name required>
+                                                </div>
+                                                <div class="field">
+                                                <input type="password" name="password_signup" placeholder=
+                                                {% if obj.s_pass %}
+                                                incorrect..Password
+                                                {% endif %}
+                                                Password required>
+                                                </div>
+                                                <div class="field">
+                                                <input type="password" name="re_password_signup" placeholder=
+                                                {% if obj.s_repass %}
+                                                incorrect..Password
+                                                {% endif %}
+                                                Confirm-password required>
+                                                </div>
+                                                <div class="field btn">
+                                                <div class="btn-layer">
+                                                </div>
+                                                <input type="submit" value="Signup">
+                                                </div>
+                                                </form>
+                                                <!-- Signup form end here -->
+
+                                                </div>
+                                                </div>
+                                                </div>
+                                                <script>
+                                                const loginText = document.querySelector(".title-text .login");
+                                                const loginForm = document.querySelector("form.login");
+                                                const loginBtn = document.querySelector("label.login");
+                                                const signupBtn = document.querySelector("label.signup");
+                                                const signupLink = document.querySelector("form .signup-link a");
+                                                signupBtn.onclick = (()=>{
+                                                loginForm.style.marginLeft = "-50%";
+                                                loginText.style.marginLeft = "-50%";
+                                                });
+                                                loginBtn.onclick = (()=>{
+                                                loginForm.style.marginLeft = "0%";
+                                                loginText.style.marginLeft = "0%";
+                                                });
+                                                signupLink.onclick = (()=>{
+                                                signupBtn.click();
+                                                return false;
+                                                });
+                                                
+                                                </script>
+										</div>
+									</section>
+                            </div>
+                            
+							<div class="col-4 col-12-medium">
+									<section class="box feature">
+									</section>
+							</div>
+                        
+                        </div>
+					</div>
+				</div>
+
+
+
+    <!-- tp_code end -->
+
+
+
+    
+        <!-- Footer -->
+				<div id="footer_div" id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+
+
+							<div class="col-3 col-6-medium col-12-small">
+
+								<!-- About us -->
+									<section class="widget contact last">
+										<h2>About Us</h2>
+										<h5>Created & devloped by : </h5>
+										<h5>Siddhiraj R. Kolwankar</h5>
+										<h6>visit on :: </h6> <br>
+										<ul>
+											<li><a href="https://twitter.com/s_raj02?s=08" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="https://instagram.com/s_raj02?igshid=1tah9pso5l6eh" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="https://www.facebook.com/siddhiraj.kolwankar.37" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+
+										</ul>
+                                        Created & Devloped by <br> Siddhiraj R. Kolwankar <br> 
+                                        Design :: <a href="https://html5up.net/">HTML5 Up</a> <br>
+                                        Design taken form site HTML5 Up. <br>
+
+									</section>
+							</div>
+
+							<div class="col-3 col-6-medium col-12-small">
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div id="copy_row" id="copyright">
+									<ul class="menu">
+                                        <br>
+										<h4><li>&copy; copyright 2021. All rights reserved. </li></h4>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			</div>
+
+
+    </body>
+
+
+<!-- Scripts -->
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'assets/js/browser.min.js' %}"></script>
+    <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/util.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script>
+    </script>
+
+
+</html>

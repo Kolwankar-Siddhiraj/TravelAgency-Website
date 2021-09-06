@@ -1,0 +1,362 @@
+{% load static %}
+{% static "images" as url_of_img %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title> Travel India </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/login_signup_page.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/for_index.css' %}" />
+
+
+	</head>
+	<body id="bdy" class="is-preload homepage" style="background-image: url('{{url_of_img}}/{{obj.imgbd}}');">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="#">Travel India</a></h1>
+								<span> <br> </span>
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li class="current"><a href="#">Home</a></li>
+									<li id="adjsut_navbar_btn" >
+										<a class="navbar_word" href="{{obj.log_btn_action}}">{{obj.userid}}</a>
+										{% if obj.login_status %}
+										<ul>
+											<li><a href="#"><h6>Settings</h6></a></li>
+											<li><a href="log_out"><h6>Log out</h6></a></li>
+										</ul>
+										{% endif %}
+									</li>
+								</ul>
+							</nav>
+							<!-- navigation bar for user settings and log out -->
+
+					</header>
+				</div>
+
+
+		<!-- Main division start -->
+				<!-- Banner -->
+				<div id="banner-wrapper">
+					<div id="banner" class="box container">
+						<div class="row">
+							<div class="col-7 col-12-medium">
+								<h2>I Love Travelling..!!!</h2>
+								<p> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+		<!-- Main division end -->
+			<br>
+		<!-- Special offer OR Treading tours division start -->
+			{% for dest in destination_list %}
+			{% if dest.offer %}
+			<br>
+			<!-- Banner -->
+			<div id="banner-wrapper">
+				<div id="banner" class="box container" style="background-image: url('{{dest.destination_image.url}}');">
+					<div class="row">
+						<div class="col-7 col-12-medium">
+							<h2> {{dest.destination_name}} </h2>
+							<h3 class="discription_text" > {{dest.discription}} </h3>
+							<br><br> <br><br> <br>
+							<div id="dest_prise_div">
+								<h3>{{dest.price}}.Rs Only..!</h3>
+							</div>
+						</div>
+						<div class="col-5 col-12-medium">
+							<h2 style="text-align: center;"><b>offer..!</b></h2>
+							<ul>
+								<li><a href=
+								{% if obj.login_status %}
+								book_trip_main_btn_action 
+								{% endif %}
+								login_signup_page 
+								id="main_2_btn1" class="button large icon solid fa-arrow-circle-right">Book Trip</a></li>
+								<li><a href=
+								{% if obj.login_status %}
+								more_info_main_btn_action 
+								{% endif %}
+								#
+								id="main_2_btn2" class="button alt large icon solid fa-question-circle">More info</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		<!-- Special offer OR Treading tours division end -->
+			<br>
+		<!-- Normal tours division start -->
+			{% for dest in destination_list %}
+			{% if dest.offer %}
+
+			{% else %}
+			<br>
+			<!-- Banner -->
+			<div id="banner-wrapper">
+				<div id="banner" class="box container" style="background-image: url('{{dest.destination_image.url}}');">
+					<div class="row">
+						<div class="col-7 col-12-medium">
+							<h2 style="color: black;"> {{dest.destination_name}} </h2>
+							<h3 class="discription_text"> {{dest.discription}} </h3>
+							<br><br> <br><br> <br>
+							<div id="dest_prise_div">
+								<h3>{{dest.price}}.Rs</h3>
+							</div>
+						</div>
+						<div class="col-5 col-12-medium">
+							<h2 style="text-align: center;"><br></h2>
+							<ul>
+								<li><a href=
+								{% if obj.login_status %}
+								book_trip_main_btn_action 
+								{% endif %}
+								login_signup_page 
+								id="main_2_btn1" class="button large icon solid fa-arrow-circle-right">Book Trip</a></li>
+								<li><a href=
+								{% if obj.login_status %}
+								more_info_main_btn_action 
+								{% endif %}
+								#
+								id="main_2_btn2" class="button alt large icon solid fa-question-circle">More info</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		<!-- Normal tours division end -->
+			<br>
+		<!-- My fav destination division start -->
+				<!-- Banner -->
+				<div id="banner-wrapper">
+					<div id="banner" class="box container">
+						<div class="row">
+							<div class="col-7 col-12-medium">
+								<h2>I Love Konkan..!!!</h2>
+								<p>Real Heaven on the Earth...! <br> Peace.! Happiness..! </p>
+								<br> <br>
+								<h5>Something about Konkan..!</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+		<!-- My fav destination division end -->
+			<br>
+
+			<!-- Features -->
+				<div id="features-wrapper">
+					<div class="container">
+						<div class="row">
+							<!-- Box division start -->
+							<div class="col-4 col-12-medium">
+								<!-- Box -->
+									<section class="box feature">
+										<a href="#" class="image featured"><img src="{% static 'images/konkan.jpg' %}" alt="" /></a>
+										<div class="inner">
+											<header>
+												<h2>Greenery...! </h2>
+												<p></p>
+											</header>
+											<p> Konkan's greenery, coconut trees, beautiful virgin beaches, waterfalls, 
+											mountains and lush green valleys will definitely provide a rich and pleasant 
+											experience for the traveler. <br>   </p>
+											<h1>  </h1>
+										</div>
+									</section>
+							</div>
+							<!-- Box division end -->
+							<!-- Box division start -->
+							<div class="col-4 col-12-medium">
+								<!-- Box -->
+									<section class="box feature">
+										<a href="#" class="image featured"><img src="{% static 'images/konkan1.jpg' %}" alt="" /></a>
+										<div class="inner">
+											<header>
+												<h2>Fort's...!</h2>
+												<p></p>
+											</header>
+											<p>Sindhudurg Fort is a historical fort that occupies an island in the 
+											Arabian Sea. The fort was built by chhatrapati Shivaji Maharaj. The 
+											fortress lies on the shore of Malvan town of Sindhudurg District in 
+											the Konkan region of Maharashtra.</p>
+										</div>
+									</section>
+							</div>
+							<!-- Box division end -->
+							<!-- Box division start -->
+							<div class="col-4 col-12-medium">
+								<!-- Box -->
+									<section class="box feature">
+										<a href="#" class="image featured"><img src="{% static 'images/konkan2.jpg' %}" alt="" /></a>
+										<div class="inner">
+											<header>
+												<h2>Great Sea...!</h2>
+												<p></p>
+											</header>
+											<p>Konkan, a beautiful place which is as good as a paradise, a coastline at the 
+											western part of India. The sandy golden beaches with crystal clear ocean are the 
+											main attractions for all the travelers across the world to visit Konkan at least 
+											once in a lifetime.</p>
+										</div>
+									</section>
+							</div>
+							<!-- Box division end -->
+
+							<!-- You can add more information here -->
+
+
+						</div>
+					</div>
+				</div>
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<div id="sidebar">
+										<section class="widget thumbnails">
+											<!-- text for images here -->
+											<h3></h3>
+											<div class="grid">
+												<div class="row gtr-50">
+													<br>
+													<div class="col-6"><a href="#" class="image fit"><img src="{% static 'images/img5.jpg' %}" alt="" /></a></div>
+													<br>
+													<div class="col-6"><a href="#" class="image fit"><img src="{% static 'images/img3.jpg' %}" alt="" /></a></div>
+													<br>
+													<div class="col-6"><a href="#" class="image fit"><img src="{% static 'images/img2.jpg' %}" alt="" /></a></div>
+													<br>
+													<div class="col-6"><a href="#" class="image fit"><img src="{% static 'images/img4.jpg' %}" alt="" /></a></div>
+													<br>
+												</div>
+											</div>
+											<a href="https://www.dreamstime.com/photos-images/konkan.html" class="button icon fa-file-alt">More</a>
+										</section>
+									</div>
+
+							</div>
+							<div class="col-8 col-12-medium imp-medium">
+
+								<!-- Content -->
+									<div id="content">
+										<section class="last">
+											<h2>Konkan Culture and People...!</h2>
+											<p> This region is a naturally gifted location of the state. The individuals 
+											are literate and usually well off. They are a normally peace loving people who 
+											are practical and friendly to Tourists. They depend mainly upon fishing and 
+											farming for their income and nowadays some are making their living with the 
+											assistance of growing Tourism in the area. The areas of <strong> Devgad, Dapoli </strong> and 
+											<strong> Ratnagiri </strong> are well-known for its <strong> Alphonso mangoes </strong> and also a lot of fish are 
+											exported from <strong> Ratnagiri port. </strong> </p>
+											
+											<p> <strong> Maharashtra’s </strong> 720-km. shoreline and the adjoining area or <strong>‘Konkan’</strong> as it 
+											is called, extends from <strong>Dahanu</strong> in the north up to <strong>Goa</strong> in south. <strong>Konkan</strong> is well 
+											known for its natural appeal and is quick emerging as a preferred traveler 
+											location for travelers. <strong>Konkan’s greenery, coconut trees, stunning virgin 
+											beaches, waterfalls, mountains and rich green valley’s</strong> will definitely supply 
+											an abundant and pleasant experience for the tourist.</p>
+											
+											<a href="http://www.konkanyatra.com/general-information-about-konkan.html" class="button icon solid fa-arrow-circle-right">Continue Reading</a>
+										</section>
+									</div>
+									
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer_div" id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+
+
+							<div class="col-3 col-6-medium col-12-small">
+
+								<!-- About us -->
+									<section class="widget contact last">
+										<h2>About Us</h2>
+										<h5> Devloper & Owner </h5>
+										<h5>Siddhiraj R. Kolwankar</h5>
+										<h6>visit on :: </h6> <br>
+										<ul>
+											<li><a href="https://twitter.com/s_raj02?s=08" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="https://instagram.com/s_raj02?igshid=1tah9pso5l6eh" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="https://www.facebook.com/siddhiraj.kolwankar.37" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+											
+											<!--
+											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+											-->
+										</ul>
+										<h6><i>
+										Created & Devloped by <br> Siddhiraj R. Kolwankar <br> 
+										Design :: <a href="https://html5up.net">HTML5 Up</a> <br>
+										Design taken form site HTML5 Up. <br>
+										</i></h6>
+									</section>
+							</div>
+
+							<div class="col-3 col-6-medium col-12-small">
+
+								<!-- Links -->
+									<section class="widget links">
+										<div>
+											<br>
+											<h6><i>For any Query or Reviews <br> contact us :: </i></h6>
+											<h5> connecttravelindia@gmail.com </h5>
+										</div>
+									</section>
+								
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div id="copy_row" id="copyright">
+									<ul class="menu">
+										<br>
+										<h4>Travel India <li>&copy; copyright 2021. All rights reserved. </li></h4>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+			<script>
+			</script>
+
+	</body>
+</html>

@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold-webfont.woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular-webfont.woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light-webfont.woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+
+#banner {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    background-size: 100%;
+}
+
+
+
+style {
+    width: 90%;
+    height: 90%;
+    object-fit: fill;
+    background-size: 90%;
+}
+
+
+
+<!-- Special offer OR Treading tours division start -->
+			<!-- Banner -->
+			<div id="banner-wrapper">
+				<div id="banner" class="box container">
+					<div class="row">
+						<div class="col-7 col-12-medium">
+							<h2>I Love Konkan ! </h2>
+							<p>Real Heaven on the Earth...! <br> Peace.! Happiness..! </p>
+						</div>
+						<div class="col-5 col-12-medium">
+							<ul>
+								<li><a href=
+								{% if obj.login_status %}
+								book_trip_main_btn_action 
+								{% endif %}
+								login_signup_page 
+								id="main_2_btn1" class="button large icon solid fa-arrow-circle-right">Book Trip</a></li>
+								<li><a href=
+								{% if obj.login_status %}
+								more_info_main_btn_action 
+								{% endif %}
+								#
+								id="main_2_btn2" class="button alt large icon solid fa-question-circle">More info</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Special offer OR Treading tours division end -->
+
+
+
+
+
+
+
+
+style="background-image: url('{{url_of_img}}/{{img_obj.img}}');"
+
+<!--
+
+    <!-- Banner -->
+    <div id="banner-wrapper">
+        <div id="banner" class="box container">
+            <!-- hide to use full block
+            <div class="row">
+            -->
+                <div class="col-7 col-12-medium">
+                    <!-- block content for Login or Signup
+                    <h2>I Love Konkan !</h2>
+                    <p>Real Heaven on the Earth...! Peace.! Happiness..! Login or Signup Page 
+                    Real Heaven on the Earth...! Peace.! Happiness..! Login or Signup Page </p>
+                    -->
+
+                    <!--                             
+                        html, body{
+                        display: grid;
+                        height: 100%;
+                        width: 100%;
+                        place-items: center;
+                        background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+                        }
+                    -->
+                    
+                <div id="login_form">
+
+                    <div class="wrapper">
+                        <div class="title-text">
+                        <div class="title login">
+                        Login Form</div>
+                        <div class="title signup">
+                        Signup Form</div>
+                        </div>
+                        <div class="form-container">
+                        <div class="slide-controls">
+                        <input type="radio" name="slide" id="login" checked>
+                        <input type="radio" name="slide" id="signup">
+                        <label for="login" class="slide login">Login</label>
+                        <label for="signup" class="slide signup">Signup</label>
+                        <div class="slider-tab">
+                        </div>
+                        </div>
+                        <div class="form-inner">
+                        <form action="#" class="login">
+                        <div class="field">
+                        <input type="text" placeholder="Email Address" required>
+                        </div>
+                        <div class="field">
+                        <input type="password" placeholder="Password" required>
+                        </div>
+                        <div class="pass-link">
+                        <a href="#">Forgot password?</a></div>
+                        <div class="field btn">
+                        <div class="btn-layer">
+                        </div>
+                        <input type="submit" value="Login">
+                        </div>
+                        <div class="signup-link">
+                        Not a member? <a href="">Signup now</a></div>
+                        </form>
+                        <form action="#" class="signup">
+                        <div class="field">
+                        <input type="text" placeholder="Email Address" required>
+                        </div>
+                        <div class="field">
+                        <input type="password" placeholder="Password" required>
+                        </div>
+                        <div class="field">
+                        <input type="password" placeholder="Confirm password" required>
+                        </div>
+                        <div class="field btn">
+                        <div class="btn-layer">
+                        </div>
+                        <input type="submit" value="Signup">
+                        </div>
+                        </form>
+                        </div>
+                        </div>
+                        </div>
+                
+                </div>
+                
+                        <script>
+                        const loginText = document.querySelector(".title-text .login");
+                        const loginForm = document.querySelector("form.login");
+                        const loginBtn = document.querySelector("label.login");
+                        const signupBtn = document.querySelector("label.signup");
+                        const signupLink = document.querySelector("form .signup-link a");
+                        signupBtn.onclick = (()=>{
+                        loginForm.style.marginLeft = "-50%";
+                        loginText.style.marginLeft = "-50%";
+                        });
+                        loginBtn.onclick = (()=>{
+                        loginForm.style.marginLeft = "0%";
+                        loginText.style.marginLeft = "0%";
+                        });
+                        signupLink.onclick = (()=>{
+                        signupBtn.click();
+                        return false;
+                        });
+                        </script>
+                        
+
+
+
+
+
+                </div>
+                <!-- dont want buttons so hide 
+                <div class="col-5 col-12-medium">
+                    <ul>
+                        <li><a href="#" class="button large icon solid fa-arrow-circle-right">Book My Trip</a></li>
+                        <li><a href="#" class="button alt large icon solid fa-question-circle">More info</a></li>
+                    </ul>
+                </div>
+                -->
+            <!-- hide to use full block
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+
+-->
