@@ -14,14 +14,14 @@ from time import *
 # custome members 
 # Initilization OR declaring varibles
 background_img_of_body = ["pic01.jpg", "pic02.jpg", "pic03.jpg", "pic04.jpg", "pic05.jpg", "pic06.jpg", "pic07.jpg"]
-user1 = str("sid")
-password_db = str("s123")
+user1 = str("username_db")
+password_db = str("password_db")
 email_pattern = "[a-zA-Z0-9]+@[a-zA-Z]+\.(com|net|in)"
 username_pattern = "[a-zA-Z]"
 otp_verification_pattern = "[0-9]"
 otp_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-host_email_addr = 'connecttravelindia@gmail.com'
-host_email_pass = 'websitepassword'
+host_email_addr = 'sample@gmail.com'
+host_email_pass = 'password'
 otp = ""
 
 
