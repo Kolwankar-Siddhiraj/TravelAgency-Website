@@ -80,7 +80,7 @@ def login_signup_page(request): # page for login and signup >> main login button
     return render(request, 'login_signup_page.html', {'obj':obj})
 
 # page for checking information of login from > login_signup page >> login button press action
-def login_check_info(request): 
+def login_check_info(request):
     userid_login = str(request.POST["userid_login"])
     password_login = str(request.POST["password_login"])
     obj.check_email = False
