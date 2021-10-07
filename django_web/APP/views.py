@@ -53,7 +53,7 @@ obj.check_pass = False
 obj.log_btn_action = "login_signup_page"
 obj.login_status = False
 obj.s_email = False
-obj.s_userid = False
+obj.s_userid = False 
 obj.s_pass = False
 obj.s_repass = False
 
