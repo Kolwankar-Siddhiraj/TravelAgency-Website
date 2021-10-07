@@ -45,7 +45,7 @@ class Data:
     user_email_show_to_verify : str
 
 obj = Data()
-obj.imgbd = random.choice(background_img_of_body) # changing body background
+obj.imgbd = random.choice(background_img_of_body) # changing body background 
 obj.imgdiv = 'konkan.jpg'
 obj.userid = "Login"
 obj.check_email = False
