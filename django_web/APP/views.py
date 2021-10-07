@@ -127,7 +127,7 @@ def check_info_for_login(userid, password, req):
         verification_result = False
         print("Invalid e-mail")
 
-    # checking login information 
+    # checking login information  
     user = auth.authenticate(username=userid_login, password=password_login)
 
     if user is not None:
