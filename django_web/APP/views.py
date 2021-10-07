@@ -5,7 +5,7 @@ from .models import *
 import re
 import smtplib 
 import random
-from django.contrib.auth.models import User, auth
+from django.contrib.auth.models import User, auth 
 from time import * 
 
 
