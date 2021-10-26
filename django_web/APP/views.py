@@ -221,6 +221,7 @@ def signup_check_info(request):
 
 # Method > signup_check_info < ends here
 
+
 # method for sending email of otp to users
 def send_email_otp():
     global otp
